@@ -1,3 +1,6 @@
 [submodule "conf/modsec/owasp_crs"]
 	path = conf/modsec/owasp_crs
 	url = https://github.com/carlosdg/owasp-modsecurity-crs
+[submodule "NodeGoat"]
+	path = NodeGoat
+	url = git@github.com:carlosdg/NodeGoat.git
