@@ -25,75 +25,66 @@ This section is meant to the people that found this repository and want to know 
 ### OWASP
 > The Open Web Application Security Project (OWASP) is a nonprofit foundation that works to improve the security of software
 
-<p align="right">
+
 Source: https://owasp.org/
-</p>
 
 
 ### OWASP Top 10
 > The OWASP Top 10 is a regularly-updated report outlining security concerns for web application security, focusing on the 10 most critical risks. The report is put together by a team of security experts from all over the world
 
-<p align="right">
+
 Source: https://www.cloudflare.com/learning/security/threats/owasp-top-10/
-</p>
 
 
 ### Proxy
 > A proxy server is a go‑between or __intermediary server that forwards requests for content__ from multiple clients to different servers across the Internet
 
-<p align="right">
+
 Source: https://www.nginx.com/resources/glossary/reverse-proxy-server/
-</p>
 
 
 ### Reverse proxy 
 > A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and __directs client requests to the appropriate backend server__. A reverse proxy provides an additional level of abstraction and control to ensure the smooth flow of network traffic between clients and servers.
 
-<p align="right">
+
 Source: https://www.nginx.com/resources/glossary/reverse-proxy-server/
-</p>
 
 
 ### NGINX
 > nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 
-<p align="right">
+
 Source: https://nginx.org/en/
-</p>
 
 
 ### Firewall
 > A firewall is a security system that monitors and controls network traffic based on a set of security rules. Firewalls usually sit between a trusted network and an untrusted network; oftentimes the untrusted network is the Internet
 
-<p align="right">
+
 Source: https://www.cloudflare.com/learning/security/what-is-a-firewall/
-</p>
 
 
 ### Web Application Firewall
 > A WAF or Web Application Firewall helps protect web applications by filtering and monitoring HTTP traffic between a web application and the Internet. It typically protects web applications from attacks such as cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection, among others.
 
-<p align="right">
-Source: https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/
-</p>
 
-Note that WAFs work on application level. Thanks to this, WAFs can inspect HTTP packets and look for strings that look like SQL injections for example.
+Source: https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/
+
+Note: WAFs work on application level. Thanks to this, WAFs can inspect HTTP packets and look for strings that look like SQL injections for example.
 
 
 ### ModSecurity
 > ModSecurity is an open source, cross platform web application firewall (WAF) engine for Apache, IIS and Nginx
 
-<p align="right">
+
 Source: https://github.com/SpiderLabs/ModSecurity
-</p>
 
 
 ### Docker
 > Docker is a software platform that allows you to build, test, and deploy applications quickly. __Docker packages software into standardized units called containers that have everything the software needs to run__ including libraries, system tools, code, and runtime. Using Docker, you can quickly deploy and scale applications into any environment and know your code will run
 
-<p align="right">
+
 Source: https://aws.amazon.com/docker/
-</p>
 
 
 ## Clone this repository
