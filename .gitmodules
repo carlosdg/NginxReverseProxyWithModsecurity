@@ -1,0 +1,3 @@
+[submodule "conf/modsec/owasp_crs"]
+	path = conf/modsec/owasp_crs
+	url = https://github.com/carlosdg/owasp-modsecurity-crs
