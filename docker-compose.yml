@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - "./conf/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./conf/conf.d/default.conf:/etc/nginx/conf.d/default.conf"
       - "./conf/modsec/:/etc/nginx/modsec/"
 
   web:
