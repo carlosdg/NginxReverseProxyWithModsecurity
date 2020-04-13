@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  nginx:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - "./conf/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./conf/modsec/:/etc/nginx/modsec/"
+
+  web:
+    build: NodeGoat
+    command: sh -c "until nc -z -w 2 mongo 27017 && echo 'mongo is ready for connections' && node artifacts/db-reset.js && npm start; do sleep 2; done"
+    ports:
+      - "4000:4000"
+
+  mongo:
+    image: mongo:latest
+    user: mongodb
+    expose:
+      - 27017
