@@ -8,13 +8,39 @@ In this project we've built a NGINX server with a [Web Application Firewall (WAF
 
 This repository contains a Dockerfile for NGINX using ModSecurity as a dynamic module. In the `conf` folder you can find the configuration for NGINX and ModSecurity. NodeGoat is a vulnerable web server that will be protected under the NGINX reverse proxy, this way we can be sure that the WAF works. 
 
-For the ModSecurity configuration we use the [OWASP ModSecurity Core Rule Set](https://github.com/SpiderLabs/owasp-modsecurity-crs) to include a few rules so the WAF can (try to) prevent common attacks such as cross-site scripting.
+For the ModSecurity configuration we use the [OWASP ModSecurity Core Rule Set (CRS)](https://github.com/SpiderLabs/owasp-modsecurity-crs) to include a few rules so the WAF can (try to) prevent common attacks such as cross-site scripting.
 
 After starting the servers with `docker-compose`, you can access the application via NGINX on port 80. You can also go to port 4000 to go directly to the application without going through NGINX, this way you can check that the vulnerabilities are there.
+
+## Results
+
+In this section we can see GIFs of the attacks on NodeGoat directly (port 4000) and through the WAF (port 80).
+
+### Cross-site scripting (XSS) injection
 
 <p align="center">
   <img src="doc/images/waf.gif" alt="GIF showing the difference between an XSS with and without WAF" />
 </p>
+
+NodeGoat was made vulnerable to this attack, but we can see that the request through the WAF catches this attempt (thanks to adding the OWASP Core Rule Set to the WAF) and returns a 403 status to the user.
+
+
+### No-SQL injection
+
+<p align="center">
+  <img src="doc/images/nosqli.gif" alt="GIF showing that there is no difference between a no-sql injection with and without WAF because there are no rules for avoiding this in the WAF" />
+</p>
+
+There are no rules for a no-sql injection, so the WAF doesn't detect anything malicious.
+
+
+### SQL injection
+
+<p align="center">
+  <img src="doc/images/sqli.gif" alt="GIF showing that the WAF detects an attempt of SQL injection" />
+</p>
+
+Though the application uses MongoDB as database, we can still send a string that tries to perform a SQL injection. Without the WAF, the server returns a MongoDB syntax error. Going through the WAF with the OWASP Core Rule Set, it catches this malicious attempt and returns a 403 status to the user.
 
 
 ## Glossary
